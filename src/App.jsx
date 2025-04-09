@@ -31,9 +31,9 @@ function App() {
   }
 
   const modifyArticleFn = (index) => {
-    console.log(index);
-    console.log(nameArticle);
-    console.log(newArticle);
+    // console.log(index);
+    // console.log(nameArticle);
+    // console.log(newArticle);
     if(newArticle === ""){
       return alert('Inserisci un testo per la modifica');
     }    
@@ -42,8 +42,7 @@ function App() {
     });
 
     console.log(searchArticleToModify);  
-    return setNameArticle(searchArticleToModify);
-  
+    setNameArticle(searchArticleToModify);
     // setNewArticle(searchArticleToModify);
   }
 
@@ -57,9 +56,13 @@ function App() {
             <li key={index} className='list-group-item d-flex justify-content-between gap-2'>
               <p>{nameArticle[index]}</p>
               <div className="buttons d-flex justify-content-between gap-2">
-                <button className="btn btn-outline-success col-6" onClick={() => modifyArticleFn(index)} > M </button>
+                <button className="btn btn-outline-success col-6" onClick={() => modifyArticleFn(index)} > 
+                  <i className="fa-regular fa-pen-to-square"></i>
+                </button>
 
-                <button className="btn btn-outline-danger" onClick={() => removeArticle(index)}>x</button>
+                <button className="btn btn-outline-danger" onClick={() => removeArticle(index)}>
+                  <i className="fa-solid fa-trash-can"></i>
+                </button>
               </div>
             </li>
           )}
