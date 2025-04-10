@@ -11,7 +11,9 @@ function App() {
 
   const addArticle = (e) => {
     e.preventDefault();
-    return newArticle === "" ? alert('Inserisci il nome di un articolo!!') : setNameArticle([...nameArticle, newArticle]);
+    const isNewArticle = newArticle === "" ? alert('Inserisci il nome di un articolo!!') : setNameArticle([...nameArticle, newArticle]);
+    setNewArticle('');
+    return isNewArticle
     // alert('Form inviato!')
     // console.log(nameArticle);
     // setNameArticle([...nameArticle, newArticle]);
@@ -43,6 +45,7 @@ function App() {
 
     console.log(searchArticleToModify);  
     setNameArticle(searchArticleToModify);
+    setNewArticle('');
     // setNewArticle(searchArticleToModify);
   }
 
